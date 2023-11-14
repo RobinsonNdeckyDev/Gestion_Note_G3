@@ -12,9 +12,10 @@ import { NotesComponent } from './professeurs/notes/notes.component';
 import { EtudiantsComponent } from './etudiants/etudiants.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import { FooterAdminComponent } from './header-footer/admin-h-f/footer-admin/footer-admin.component';
 import { UserHeaderComponent } from './header-footer/user-h-f/user-header/user-header.component';
 import { UserFooterComponent } from './header-footer/user-h-f/user-footer/user-footer.component';
+import { HeaderAdminComponent } from './header-footer/admin-h-f/header-admin/header-admin.component';
+import { FooterAdminComponent } from './header-footer/admin-h-f/footer-admin/footer-admin.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +28,10 @@ import { UserFooterComponent } from './header-footer/user-h-f/user-footer/user-f
     NotesComponent,
     EtudiantsComponent,
     LoginComponent,
-    FooterAdminComponent,
     UserHeaderComponent,
-    UserFooterComponent
+    UserFooterComponent,
+    HeaderAdminComponent,
+    FooterAdminComponent
   ],
   imports: [
     BrowserModule,
