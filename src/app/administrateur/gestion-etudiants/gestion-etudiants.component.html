@@ -1,1 +1,52 @@
-<p>gestion-etudiants works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-3 border p-0">
+            <div class="d-flex sidebar flex-column flex-shrink-0 p-3 text-bg-dark">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <svg class="bi pe-none me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                    <span class="fs-4">Gestion Notes</span>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto"  >
+                    <li>
+                        <a class="nav-link text-white" (click)="changeNavItem('apprenants')" >
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#speedometer2"></use>
+                            </svg>
+                            liste des apprenants
+                        </a>
+                    </li>
+                    <li class="nav-item" (click)="changeNavItem('notes')">
+                        <a class="nav-link text-white" aria-current="page">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#home"></use>
+                            </svg>
+                            liste des notes
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link text-white" (click)="changeNavItem('desactiver')">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#table"></use>
+                            </svg>
+                            liste des apprenants désactiver
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-md-9 border">
+            <div class="noteApprenant" id="notes" *ngIf="selectedNavItem === 'notes'">
+                <h1>Liste des notes</h1>
+            </div>
+            <div class="listeApprenant" id="apprenants" *ngIf="selectedNavItem === 'apprenants'">
+                <h1>Liste des apprenants</h1>
+            </div>
+            <div class="listeApprenantDesactiver" id="desactiver" *ngIf="selectedNavItem === 'desactiver'">
+                <h1>Liste des apprenats desactiver</h1>
+            </div>
+        </div>
+    </div>
+</div>

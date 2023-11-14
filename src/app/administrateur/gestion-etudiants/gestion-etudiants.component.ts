@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./gestion-etudiants.component.css']
 })
 export class GestionEtudiantsComponent {
+  selectedNavItem: string = 'apprenants'; // Default selected item
 
+  changeNavItem(item: string): void {
+    this.selectedNavItem = item;
+  }
 }
