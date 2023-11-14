@@ -7,8 +7,12 @@ import { ChildrenOutletContexts } from '@angular/router';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
-  choice:boolean=true;
- showCompnent(){
-  this.choice= !this.choice;
- }
+
+  // Affichage des composants
+  currentContent: string = 'gestionProfs'; // Initialiser le contenu actuel
+
+  showComponant(contentId: string): void {
+    this.currentContent = contentId; // Mettre à jour le contenu actuel
+  }
+
 }
