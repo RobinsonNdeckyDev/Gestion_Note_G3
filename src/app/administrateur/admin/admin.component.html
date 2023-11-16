@@ -1,1 +1,10 @@
-<p>admin works!</p>
+<app-header-admin ></app-header-admin>
+
+<div class="navAdmin container-fluid d-flex justify-content-end p-0 border">
+    <button class="btn btnProf m-2" (click)="showComponant('gestionProfs')">Gestion Formateur</button>
+    <button class="btn btnEtudiant m-2" (click)="showComponant('gestionEtud')">Gestion Etudiant</button>
+</div>
+
+<app-gestion-profs class="gestionProfs" id="gestionProfs"  *ngIf="currentContent === 'gestionProfs'"></app-gestion-profs>
+<app-gestion-etudiants class="gestionEtud" id="gestionEtud" *ngIf="currentContent === 'gestionEtud'"></app-gestion-etudiants>
+<app-footer-admin></app-footer-admin>

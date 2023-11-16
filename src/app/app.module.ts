@@ -12,7 +12,6 @@ import { NotesComponent } from './professeurs/notes/notes.component';
 import { EtudiantsComponent } from './etudiants/etudiants.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import { FooterAdminComponent } from './header-footer/admin-h-f/footer-admin/footer-admin.component';
 import { UserHeaderComponent } from './header-footer/user-h-f/user-header/user-header.component';
 import { UserFooterComponent } from './header-footer/user-h-f/user-footer/user-footer.component';
 import { SemestreComponent } from './etudiants/semestre/semestre.component';
@@ -28,10 +27,8 @@ import { SemestreComponent } from './etudiants/semestre/semestre.component';
     NotesComponent,
     EtudiantsComponent,
     LoginComponent,
-    FooterAdminComponent,
     UserHeaderComponent,
-    UserFooterComponent,
-    SemestreComponent
+    UserFooterComponent
   ],
   imports: [
     BrowserModule,

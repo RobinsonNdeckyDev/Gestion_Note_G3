@@ -1,1 +1,141 @@
-<p>gestion-profs works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-3 border p-0">
+            <div class="d-flex sidebar flex-column flex-shrink-0 p-2 text-bg-dark">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <svg class="bi pe-none me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                    <span class="fs-4"></span>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item my-2" (click)="showContent('apercuForm')">
+                        <a class="nav-link active" aria-current="page">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#home"></use>
+                            </svg>
+                            Aperçu formateurs
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item my-2">
+                        <a class="nav-link text-white" (click)="showContent('listeFormateurs')">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#speedometer2"></use>
+                            </svg>
+                            Liste Formateurs
+                        </a>
+                    </li>
+
+                    <li class="nav-item my-2">
+                        <a class="nav-link text-white" (click)="showContent('formateursOff')">
+                            <svg class="bi pe-none me-2" width="16" height="16">
+                                <use xlink:href="#home"></use>
+                            </svg>
+                            Liste formateurs désactivés
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-md-9 border">
+            <div class="apercuForm p-2" id="apercuForm"  *ngIf="currentContent === 'apercuForm'">
+                <h4 class="text-center">Aperçu des formateurs</h4>
+
+            </div>
+
+            <div class="listeFormateurs p-2" id="listeFormateurs"  *ngIf="currentContent === 'listeFormateurs'">
+
+                <h4 class="text-center fw-bold">Liste formateurs</h4>
+                <div class="trait"></div>
+
+                <div class="container mt-3 border">
+                    <div class="row titleTab bg-light">
+                        <div class="col-md-3">
+                            <p>Profil</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>Pénom Formateur</p>
+                        </div>
+                        <div class="col-md-3">
+                            Nom Formateur
+                        </div>
+                        <div class="col-md-3">
+                            <h6 class="text-center">Actions</h6>
+                        </div>
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col-md-3">
+                            <img src="" alt="">
+                        </div>
+                        <div class="col-md-3">
+                            <p>André</p>
+                        </div>
+                        <div class="col-md-3">
+                            Ndione
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-between">
+                            <button class="btn btn-info">Détails</button>
+                            <button class="btn btn-danger">Désactiver</button>
+                        </div>
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col-md-3">
+                            <img src="" alt="">
+                        </div>
+                        <div class="col-md-3">
+                            <p>André</p>
+                        </div>
+                        <div class="col-md-3">
+                            Ndione
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-between">
+                            <button class="btn btn-info">Détails</button>
+                            <button class="btn btn-danger">Désactiver</button>
+                        </div>
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col-md-3">
+                            <img src="" alt="">
+                        </div>
+                        <div class="col-md-3">
+                            <p>André</p>
+                        </div>
+                        <div class="col-md-3">
+                            Ndione
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-between">
+                            <button class="btn btn-info">Détails</button>
+                            <button class="btn btn-danger">Désactiver</button>
+                        </div>
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col-md-3">
+                            <img src="" alt="">
+                        </div>
+                        <div class="col-md-3">
+                            <p>André</p>
+                        </div>
+                        <div class="col-md-3">
+                            Ndione
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-between">
+                            <button class="btn btn-info">Détails</button>
+                            <button class="btn btn-danger">Désactiver</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formateursOff" id="formateursOff"  *ngIf="currentContent === 'formateursOff'">
+                <p>Formateurs désactivés</p>
+            </div>
+        </div>
+    </div>
+</div>

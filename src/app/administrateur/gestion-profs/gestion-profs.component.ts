@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class GestionProfsComponent {
 
+  currentContent: string = 'apercuForm'; // Initialiser le contenu actuel
+
+  showContent(contentId: string): void {
+    this.currentContent = contentId; // Mettre à jour le contenu actuel
+  }
+
 }
