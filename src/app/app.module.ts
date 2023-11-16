@@ -15,6 +15,11 @@ import { FormsModule } from '@angular/forms';
 import { UserHeaderComponent } from './header-footer/user-h-f/user-header/user-header.component';
 import { UserFooterComponent } from './header-footer/user-h-f/user-footer/user-footer.component';
 import { SemestreComponent } from './etudiants/semestre/semestre.component';
+import { HeaderAdminComponent } from './header-footer/admin-h-f/header-admin/header-admin.component';
+import { FooterAdminComponent } from './header-footer/admin-h-f/footer-admin/footer-admin.component';
+import { GestionMatieresComponent } from './administrateur/gestion-matieres/gestion-matieres.component';
+import { GestionClassesComponent } from './administrateur/gestion-classes/gestion-classes.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +33,11 @@ import { SemestreComponent } from './etudiants/semestre/semestre.component';
     EtudiantsComponent,
     LoginComponent,
     UserHeaderComponent,
-    UserFooterComponent
+    UserFooterComponent,
+    HeaderAdminComponent,
+    FooterAdminComponent,
+    GestionMatieresComponent,
+    GestionClassesComponent
   ],
   imports: [
     BrowserModule,
