@@ -38,11 +38,94 @@
             </div>
         </div>
         <div class="col-12 col-md-9 border">
+            
+            <div class="listeApprenant" id="apprenants" *ngIf="selectedNavItem === 'apprenants'">
+                <h4 class="text-center fw-bold">Liste apprenants</h4>
+                <div class="trait"></div>
+                
+                <div class="container mt-3 border">
+                    <div class="row titleTab bg-light">
+                        <div class="col-md-3">
+                            <p>Profil</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>Pénom Formateur</p>
+                        </div>
+                        <div class="col-md-3">
+                            Nom Formateur
+                        </div>
+                        <div class="col-md-3">
+                            <h6 class="text-center">Actions</h6>
+                        </div>
+                    </div>
+                
+                    <div class="row p-2">
+                        <div class="col-md-3">
+                            <img src="" alt="">
+                        </div>
+                        <div class="col-md-3">
+                            <p>André</p>
+                        </div>
+                        <div class="col-md-3">
+                            Ndione
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-between">
+                            <button class="btn btn-info">Détails</button>
+                            <button class="btn btn-danger">Désactiver</button>
+                        </div>
+                    </div>
+                
+                    <div class="row p-2">
+                        <div class="col-md-3">
+                            <img src="" alt="">
+                        </div>
+                        <div class="col-md-3">
+                            <p>André</p>
+                        </div>
+                        <div class="col-md-3">
+                            Ndione
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-between">
+                            <button class="btn btn-info">Détails</button>
+                            <button class="btn btn-danger">Désactiver</button>
+                        </div>
+                    </div>
+                
+                    <div class="row p-2">
+                        <div class="col-md-3">
+                            <img src="" alt="">
+                        </div>
+                        <div class="col-md-3">
+                            <p>André</p>
+                        </div>
+                        <div class="col-md-3">
+                            Ndione
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-between">
+                            <button class="btn btn-info">Détails</button>
+                            <button class="btn btn-danger">Désactiver</button>
+                        </div>
+                    </div>
+                
+                    <div class="row p-2">
+                        <div class="col-md-3">
+                            <img src="" alt="">
+                        </div>
+                        <div class="col-md-3">
+                            <p>André</p>
+                        </div>
+                        <div class="col-md-3">
+                            Ndione
+                        </div>
+                        <div class="col-md-3 d-flex justify-content-between">
+                            <button class="btn btn-info">Détails</button>
+                            <button class="btn btn-danger">Désactiver</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="noteApprenant" id="notes" *ngIf="selectedNavItem === 'notes'">
                 <h1>Liste des notes</h1>
-            </div>
-            <div class="listeApprenant" id="apprenants" *ngIf="selectedNavItem === 'apprenants'">
-                <h1>Liste des apprenants</h1>
             </div>
             <div class="listeApprenantDesactiver" id="desactiver" *ngIf="selectedNavItem === 'desactiver'">
                 <h1>Liste des apprenats desactiver</h1>
