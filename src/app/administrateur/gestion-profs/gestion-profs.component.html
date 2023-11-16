@@ -1,38 +1,30 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-md-3 border p-0">
+        <div class="col-12 col-md-2 p-0">
             <div class="d-flex sidebar flex-column flex-shrink-0 p-2 text-bg-dark">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <svg class="bi pe-none me-2" width="40" height="32">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-                    <span class="fs-4"></span>
+                <a class="text-center fw-bold fs-4  text-white text-decoration-none">
+                    Tableau de bord
                 </a>
                 <hr>
+
                 <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item my-2" (click)="showContent('apercuForm')">
-                        <a class="nav-link active" aria-current="page">
-                            <svg class="bi pe-none me-2" width="16" height="16">
-                                <use xlink:href="#home"></use>
-                            </svg>
+                    <li class="nav-item my-2" [ngClass]="{'fond-bleu': boutonActif === 1}" 
+                    (click)="showContent('apercuForm')" (click)="boutonActif = 1">
+                        <a class="nav-link text-white">
                             Aperçu formateurs
                         </a>
                     </li>
                     
-                    <li class="nav-item my-2">
-                        <a class="nav-link text-white" (click)="showContent('listeFormateurs')">
-                            <svg class="bi pe-none me-2" width="16" height="16">
-                                <use xlink:href="#speedometer2"></use>
-                            </svg>
+                    <li class="nav-item my-2" [ngClass]="{'fond-bleu': boutonActif === 2}" 
+                    (click)="showContent('listeFormateurs')" (click)="boutonActif = 2">
+                        <a class="nav-link text-white">
                             Liste Formateurs
                         </a>
                     </li>
 
-                    <li class="nav-item my-2">
-                        <a class="nav-link text-white" (click)="showContent('formateursOff')">
-                            <svg class="bi pe-none me-2" width="16" height="16">
-                                <use xlink:href="#home"></use>
-                            </svg>
+                    <li class="nav-item my-2"[ngClass]="{'fond-bleu': boutonActif === 3}" 
+                    (click)="showContent('formateursOff')" (click)="boutonActif = 3">
+                        <a class="nav-link text-white">
                             Liste formateurs désactivés
                         </a>
                     </li>
@@ -40,7 +32,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-12 col-md-9 border">
+        <div class="col-12 col-md-10 border">
             <div class="apercuForm p-2" id="apercuForm"  *ngIf="currentContent === 'apercuForm'">
                 <h4 class="text-center">Aperçu des formateurs</h4>
 
@@ -50,7 +42,7 @@
 
                 <h4 class="text-center fw-bold">Liste formateurs</h4>
                 <div class="trait"></div>
-
+                <button class="btn btn-dark text-light mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#ajoutFormateur">Ajouter un formateur</button>
                 <div class="container mt-3 border">
                     <div class="row titleTab bg-light">
                         <div class="col-md-3">
@@ -78,12 +70,12 @@
                             Ndione
                         </div>
                         <div class="col-md-3 d-flex justify-content-between">
-                            <button class="btn btn-info">Détails</button>
+                            <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#detailFormateur">Détails</button>
                             <button class="btn btn-danger">Désactiver</button>
                         </div>
                     </div>
 
-                    <div class="row p-2">
+                    <!-- <div class="row p-2">
                         <div class="col-md-3">
                             <img src="" alt="">
                         </div>
@@ -129,7 +121,7 @@
                             <button class="btn btn-info">Détails</button>
                             <button class="btn btn-danger">Désactiver</button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -139,3 +131,154 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+<div class="modal fade" id="detailFormateur">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 fw-bold">Détails du formateur</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 col-md-3">
+                        <img class="img-fluid" src="https://img.freepik.com/free-photo/lesson-online-english-courses-home_155003-28768.jpg?size=626&ext=jpg&uid=R66646754&ga=GA1.1.1567362029.1692611823&semt=ais" alt="">
+                    </div>
+                    <div class="col-12 col-md-9 p-2">
+                        <h4>Nom Formateur</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Excepturi possimus iusto nisi magni facilis reiciendis tempore placeat perferendis, 
+                            quo voluptas laborum dolore ea sit! Sed reprehenderit earum tenetur doloremque temporibus?
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-12 col-md-4">
+                        <span class="titleForm">Classe monitoré</span>
+                        <p>Sixiéme secondaire</p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <span class="titleForm">Matiéres dispensées</span>
+                        <ul>
+                            <li>_ Anglais</li>
+                            <li>_ français</li>
+                            <li>_ Maths</li>
+                            <li>_ Histoire</li>
+                            <li>_ Geographie</li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <span class="titleForm">Evaluations</span>
+                        <ul>
+                            <li><a href="#">_ Evaluation Anglais</a></li>
+                            <li><a href="#">_ Evaluation français</a></li>
+                            <li><a href="#">_ Evaluation Maths</a></li>
+                            <li><a href="#">_ Evaluation Histoire</a></li>
+                            <li><a href="#">_ Evaluation Geographie</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- Modal ajout Formateur -->
+<div class="modal fade" id="ajoutFormateur">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 fw-bold">Ajouter un formateur</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="mb-3">
+                                <label for="prenomFormt" class="form-label">Prénom: </label>
+                                <input type="text" class="form-control" id="prenomFormt" name="prenomFormt">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="nomFormT" class="form-label">Nom</label>
+                                <input type="text" class="form-control" id="nomFormT" name="nomFormT">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="passwordFormt" class="form-label">Assigner un mot de passe</label>
+                                <input type="password" class="form-control" id="passwordFormt" name="passwordFormt">
+                            </div>
+
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="mb-3">
+                                <label for="prenomFormt" class="form-label">Description: </label>
+                                <input type="text" class="form-control" id="prenomFormt" name="prenomFormt">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="prenomFormt" class="form-label">Assigner une classe: </label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Sélectionner la classe</option>
+                                    <option value="1">L1</option>
+                                    <option value="2">L2</option>
+                                    <option value="3">L3</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="emailAdress" class="form-label">Assigner des matiéres</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Sélectionner les matières</option>
+                                    <option value="1">Maths</option>
+                                    <option value="2">Français</option>
+                                    <option value="3">Anglais</option>
+                                    <option value="4">Histoire</option>
+                                    <option value="5">Géographie</option>
+                                    <option value="6">Espagnole</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="photoProfilFormt" class="form-label">Photo de profil</label>
+                        <input type="text" class="form-control" id="photoProfilFormt" name="photoProfilFormt">
+                    </div>
+                    <div class="mb-3">
+                        <label for="emailAdress" class="form-label">Adresse email</label>
+                        <input type="email" class="form-control" id="emailAdress" name="emailAdress">
+                    </div>
+
+                    <!-- Envoi du formulaire -->
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-dark text-light" type="submit" data-bs-dismiss="modal">Envoyer</button>
+                    </div>
+                </form>
+            </div>
+            <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" >Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+        </div> 
+    </div>
+</div>
+<!-- Modal ajout Formateur -->
+

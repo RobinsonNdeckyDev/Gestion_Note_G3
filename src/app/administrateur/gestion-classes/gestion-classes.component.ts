@@ -1,11 +1,11 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-gestion-profs',
-  templateUrl: './gestion-profs.component.html',
-  styleUrls: ['./gestion-profs.component.css']
+  selector: 'app-gestion-classes',
+  templateUrl: './gestion-classes.component.html',
+  styleUrls: ['./gestion-classes.component.css']
 })
-export class GestionProfsComponent {
+export class GestionClassesComponent {
 
   // Gestion bouton
   boutonActif = 1;
@@ -17,12 +17,5 @@ export class GestionProfsComponent {
   }
 
   // Initialisation du contenu actuel
-
-
-
-}
   
-
-
-
-
+}

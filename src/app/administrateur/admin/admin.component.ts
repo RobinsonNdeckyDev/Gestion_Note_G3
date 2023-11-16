@@ -8,11 +8,15 @@ import { ChildrenOutletContexts } from '@angular/router';
 })
 export class AdminComponent {
 
-  // Affichage des composants
-  currentContent: string = 'gestionProfs'; // Initialiser le contenu actuel
+  // Gestion bouton
+  boutonActif = 1;
 
+  // Initialiser le contenu actuel
+  currentContent: string = 'gestionProfs';
+
+  // Mettre à jour le contenu actuel
   showComponant(contentId: string): void {
-    this.currentContent = contentId; // Mettre à jour le contenu actuel
+    this.currentContent = contentId; 
   }
-
+  
 }

@@ -16,6 +16,8 @@ import { UserHeaderComponent } from './header-footer/user-h-f/user-header/user-h
 import { UserFooterComponent } from './header-footer/user-h-f/user-footer/user-footer.component';
 import { HeaderAdminComponent } from './header-footer/admin-h-f/header-admin/header-admin.component';
 import { FooterAdminComponent } from './header-footer/admin-h-f/footer-admin/footer-admin.component';
+import { GestionMatieresComponent } from './administrateur/gestion-matieres/gestion-matieres.component';
+import { GestionClassesComponent } from './administrateur/gestion-classes/gestion-classes.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { FooterAdminComponent } from './header-footer/admin-h-f/footer-admin/foo
     UserHeaderComponent,
     UserFooterComponent,
     HeaderAdminComponent,
-    FooterAdminComponent
+    FooterAdminComponent,
+    GestionMatieresComponent,
+    GestionClassesComponent
   ],
   imports: [
     BrowserModule,
