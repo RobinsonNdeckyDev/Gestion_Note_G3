@@ -1,1 +1,224 @@
-<p>etudiants works!</p>
+<body cz-shortcut-listen="true">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid ">
+          <a class="navbar-brand" href="#">Année Accademique</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+            <ul class="navbar-nav">
+              <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li> -->
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li class="nav-item dropdown text-light">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: rgb(30, 101, 101);" >
+                 Année Accademique
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+   
+      
+    <main>
+      <h1 class="visually-hidden"></h1>
+    
+      <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height: 600px;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          <span class="fs-4"></span>
+        </a>
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+              <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">mdo</font></font></strong>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+              <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nouveau projet...</font></font></a></li>
+              <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Paramètres</font></font></a></li>
+              <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Profil</font></font></a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">se déconnecter</font></font></a></li>
+            </ul>
+          </div>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link active" aria-current="page">
+              <svg class="bi me-2" width="16" height="16" ><use xlink:href="#home"></use></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+              Maison
+            </font></font></a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+              Tableau de bord
+            </font></font></a>
+          </li>
+          <li>
+            <a style="cursor: pointer;" class="nav-link text-white" (click)= "Afficher()">
+              <svg class="bi me-2" width="16" height="16" style="background-color: aqua;" ><use xlink:href="#table"></use></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit; ">
+              Note de Devoir 
+            </font></font></a>
+          </li>
+          <li>
+            <a style="cursor: pointer;" class="nav-link text-white"  (click)="Afficher()">
+              <svg class="bi me-2" width="16" height="16" style="background-color: aqua;"><use xlink:href="#grid"></use></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+             Note d'examen
+            </font></font></a>
+          </li>
+          <li>
+            <a href="#" class="nav-link text-white">
+              <svg class="bi me-2" width="16" height="16"  ><use xlink:href="#people-circle"></use></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+              Clients
+            </font></font></a>
+          </li>
+        </ul>
+        <hr>
+            
+      </div>
+    
+ 
+      
+      
+      <div class="card-body" *ngIf="showDevoir">
+        <!-- <div class="notes  w-100" *ngIf="showSemestre">
+        <button type="button" class="btn btn-primary me-5 mt-2 w-100 " (click)="affichesem()" >{{buttontext}}
+        </button>
+        {{Semestre1}}
+      </div> -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th >Matieres </th>
+              <th class="text-center">Devoir n°1 <i class="bi bi-pencil-square"></i></th>
+              <th class="text-center">Devoir n°2 <i class="bi bi-pencil-square"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="titre">HTML/CSS</td>
+              <td class="text-center" id="titre"><span>16</span></td>
+              <td class="text-center" id="titre"><span >20</span></td>
+            </tr>
+            <tr>
+              <td>Angular</td>
+              <td class="text-center"><span>9</span></td>
+              <td class="text-center"><span>18</span></td>
+            </tr>
+            <tr>
+              <td id="titre">Gestion de Projet</td>
+              <td class="text-center" id="titre"><span >11</span></td>
+              <td class="text-center" id="titre"><span>14</span></td>
+            </tr>
+            <tr>
+              <td>Javascripte</td>
+              <td class="text-center"><span >15</span></td>
+              <td class="text-center"><span >17</span></td>
+            </tr>
+            <tr>
+              <td id="titre">Maquettage</td>
+              <td  class="text-center" id="titre" ><span >12</span></td>
+              <td class="text-center" id="titre"><span >13</span></td>
+            </tr>
+          </tbody>
+        </table><hr>
+        <h4 style="background-color: rgba(71, 123, 186, 0.657);">Module2</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th >Matieres </th>
+              <th class="text-center">Devoir n°1 <i class="bi bi-pencil-square"></i></th>
+              <th class="text-center">Devoir n°2 <i class="bi bi-pencil-square"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="titre">HTML/CSS</td>
+              <td class="text-center" id="titre"><span>16</span></td>
+              <td class="text-center" id="titre"><span >20</span></td>
+            </tr>
+            <tr>
+              <td>Javascripte</td>
+              <td class="text-center"><span >14</span></td>
+              <td class="text-center"><span >17</span></td>
+            </tr>
+            <tr>
+              <td id="titre">Maquettage</td>
+              <td  class="text-center" id="titre" ><span >12</span></td>
+              <td class="text-center" id="titre"><span >13</span></td>
+            </tr>
+          </table>
+      </div>
+      
+      <div *ngIf="!showDevoir">
+        <h1>Examen</h1>
+        <!-- <div class="card-body">
+          <div class="semestre d-flex justify-content-center">
+          <button type="button" class="btn btn-primary me-5 mt-2">Semestre 1
+          </button>
+            <button type="button" class="btn btn-secondary mt-2" >Semestre 2</button>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th >Matieres </th>
+                <th class="text-center">Devoir n°1<i class="bi bi-pencil-square "></i>
+                </th>
+                <th class="text-center">Devoir n°2<i class="bi bi-pencil-square "></i>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="titre">HTML/CSS</td>
+                <td class="text-center" id="titre"><span>16</span></td>
+                <td class="text-center" id="titre"><span >20</span></td>
+              </tr>
+              <tr>
+                <td>Angular</td>
+                <td class="text-center"><span>9</span></td>
+                <td class="text-center"><span>18</span></td>
+              </tr>
+              <tr>
+                <td id="titre">Gestion de Projet</td>
+                <td class="text-center" id="titre"><span >11</span></td>
+                <td class="text-center" id="titre"><span>14</span></td>
+              </tr>
+              <tr>
+                <td>Javascripte</td>
+                <td class="text-center"><span >10</span></td>
+                <td class="text-center"><span >17</span></td>
+              </tr>
+              <tr>
+                <td id="titre">Maquettage</td>
+                <td  class="text-center" id="titre" ><span >12</span></td>
+                <td class="text-center" id="titre"><span >13</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div> -->
+      </div>
+    </main>
+    
+    
+
+    
+    </body>

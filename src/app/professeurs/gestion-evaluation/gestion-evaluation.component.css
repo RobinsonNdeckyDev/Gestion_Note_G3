@@ -1,0 +1,13 @@
+.container{
+  display: flex;
+  /* justify-content: flex-end; */
+  /* text-align: end; */
+  margin-left: 40%;
+  width: 40%;
+  border: 1px red solid;
+}
+
+.prime
+{
+  border: 1px solid green !important;
+}

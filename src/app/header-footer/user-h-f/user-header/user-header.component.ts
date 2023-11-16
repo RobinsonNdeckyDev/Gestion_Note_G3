@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class UserHeaderComponent {
 
+  sidebarTitle: string = 'Utilisateur';
+
+
+  logClick(): void {
+
+  }
 }

@@ -1,5 +1,5 @@
 export class Professeurs {
-  idProfesseur: number = 0;
+  idProfesseur? :number;
   nomProfesseur: string = '';
   prenomProfesseur: string = '';
   emailProfesseur: string = '';
