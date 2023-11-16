@@ -22,7 +22,7 @@
           <div>
             <ul>
               <li class="nav-item dropdown text-light">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: rgb(30, 101, 101);" >
                  Année Accademique
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
@@ -40,7 +40,7 @@
     <main>
       <h1 class="visually-hidden"></h1>
     
-      <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height: 500px;">
+      <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height: 600px;">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
           <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
           <span class="fs-4"></span>
@@ -74,7 +74,7 @@
           </li>
           <li>
             <a style="cursor: pointer;" class="nav-link text-white" (click)= "Afficher()">
-              <svg class="bi me-2" width="16" height="16" ><use xlink:href="#table"></use></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit; ">
+              <svg class="bi me-2" width="16" height="16" style="background-color: aqua;" ><use xlink:href="#table"></use></svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit; ">
               Note de Devoir 
             </font></font></a>
           </li>
@@ -97,19 +97,13 @@
     
  
       
+      
       <div class="card-body" *ngIf="showDevoir">
-        <button type="button" class="btn btn-primary me-5 mt-2 w-100" (click)="affichesem()" >{{buttontext}}
+        <!-- <div class="notes  w-100" *ngIf="showSemestre">
+        <button type="button" class="btn btn-primary me-5 mt-2 w-100 " (click)="affichesem()" >{{buttontext}}
         </button>
         {{Semestre1}}
-        <!-- <button type="button" class="btn btn-secondary mt-2" (click)="affichesem()">Semestre 2</button> -->
-        <div class="semestre d-flex justify-content-center "  *ngIf="showSemestre">
-        
-        <h1 ></h1>
-        <div class="semestre" >          
-        </div>
-          
-        </div>
-
+      </div> -->
         <table class="table">
           <thead>
             <tr>
@@ -136,7 +130,7 @@
             </tr>
             <tr>
               <td>Javascripte</td>
-              <td class="text-center"><span >10</span></td>
+              <td class="text-center"><span >15</span></td>
               <td class="text-center"><span >17</span></td>
             </tr>
             <tr>
@@ -145,17 +139,42 @@
               <td class="text-center" id="titre"><span >13</span></td>
             </tr>
           </tbody>
-        </table>
+        </table><hr>
+        <h4 style="background-color: rgba(71, 123, 186, 0.657);">Module2</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th >Matieres </th>
+              <th class="text-center">Devoir n°1 <i class="bi bi-pencil-square"></i></th>
+              <th class="text-center">Devoir n°2 <i class="bi bi-pencil-square"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="titre">HTML/CSS</td>
+              <td class="text-center" id="titre"><span>16</span></td>
+              <td class="text-center" id="titre"><span >20</span></td>
+            </tr>
+            <tr>
+              <td>Javascripte</td>
+              <td class="text-center"><span >14</span></td>
+              <td class="text-center"><span >17</span></td>
+            </tr>
+            <tr>
+              <td id="titre">Maquettage</td>
+              <td  class="text-center" id="titre" ><span >12</span></td>
+              <td class="text-center" id="titre"><span >13</span></td>
+            </tr>
+          </table>
       </div>
-
+      
       <div *ngIf="!showDevoir">
         <h1>Examen</h1>
-        <div class="card-body">
+        <!-- <div class="card-body">
           <div class="semestre d-flex justify-content-center">
           <button type="button" class="btn btn-primary me-5 mt-2">Semestre 1
           </button>
             <button type="button" class="btn btn-secondary mt-2" >Semestre 2</button>
-          <span>sjcpkdjcp</span>
           </div>
           <table class="table">
             <thead>
@@ -195,7 +214,7 @@
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> -->
       </div>
     </main>
     

@@ -12,19 +12,10 @@ Semestre1!: string ;
 buttontext!: string;
  Afficher(){
   this.showDevoir=!this.showDevoir;
+  // if (this.showDevoir==this.showSemestre) {
+  //   this.showSemestre==this.showDevoir
+  // }
  }
  
- ngOnInit(): void{
-  this.buttontext="Semestre1"
-  
-   }
-   affichesem(){
-    if (this.buttontext=="Semestre1") {
-      this.buttontext="Semestre2"
-    }
-    else{
-      this.buttontext="Semestre1"
-    }
-   }
-   
+ 
 }

@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { FooterAdminComponent } from './header-footer/admin-h-f/footer-admin/footer-admin.component';
 import { UserHeaderComponent } from './header-footer/user-h-f/user-header/user-header.component';
 import { UserFooterComponent } from './header-footer/user-h-f/user-footer/user-footer.component';
+import { SemestreComponent } from './etudiants/semestre/semestre.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UserFooterComponent } from './header-footer/user-h-f/user-footer/user-f
     LoginComponent,
     FooterAdminComponent,
     UserHeaderComponent,
-    UserFooterComponent
+    UserFooterComponent,
+    SemestreComponent
   ],
   imports: [
     BrowserModule,
