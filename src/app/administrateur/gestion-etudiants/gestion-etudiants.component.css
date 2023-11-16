@@ -4,3 +4,8 @@
  a:hover{
     background-color: blue;
  }
+ .trait {
+     border: 2px solid #254667;
+     width: 20%;
+     margin: 0 auto;
+ }
