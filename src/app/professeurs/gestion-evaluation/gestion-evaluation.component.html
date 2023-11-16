@@ -1,21 +1,24 @@
 
-<div class="container">
-  <div class="content">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<div class="container d-flex flex-column mt-5">
+  
+  <div class="top">
+    <div class="bouton d-flex justify-content-end">
+      <button type="button" class="btn btn-primary" id="btnTable" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Programmer Evaluation
-    </button>
+      </button>
+    </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="text-center" id="exampleModalLabel">Modal title</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form>
               <div class="mb-3 ">
 
-                <label for="semestre">Semestre:</label>
+                <label for="semestre" class="#" >Semestre:</label>
                 <input type="text" class="form-control" id="semestre" [(ngModel)]="nouvelleEvaluation.semestre" required>
               </div>
               <div class="mb-3">
@@ -50,18 +53,20 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <h2>Liste des Évaluations Enregistrées</h2>
-    <table>
+  <div class="table">
+    <h2 class="text-center mb-4">Liste des Évaluations Enregistrées</h2>
+    <table class="tableList">
       <thead>
-        <tr>
-          <th>Semestre</th>
-          <th>Date</th>
-          <th>Type</th>
-          <th>Année Scolaire</th>
-          <th>État</th>
-          <th>Matière</th>
-          <th>Actions</th>
+        <tr id="listTr">
+          <th id="elemTr">Semestre</th>
+          <th id="elemTr">Date</th>
+          <th id="elemTr">Type</th>
+          <th id="elemTr">Année Scolaire</th>
+          <th id="elemTr">État</th>
+          <th id="elemTr">Matière</th>
+          <th id="elemTr">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -79,6 +84,9 @@
     </table>
   </div>
 </div>
+
+
+
 <!-- <button (click)="supprimerEvaluation(evaluation.id)" [disabled]="evaluation.etat === 'Faite'">Supprimer</button> -->
 
 
@@ -92,25 +100,25 @@
 
 
 <!-- <div class="modal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-center">Programmer une Évaluation</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="card w-75">
-          <div class="card-body ">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title text-center">Programmer une Évaluation</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <div class="card w-75">
+        <div class="card-body ">
 
-          </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary">Save changes</button>
     </div>
   </div>
+</div>
 </div> -->
 
 
