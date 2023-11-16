@@ -9,24 +9,36 @@ export class FormateurService {
 
   constructor() {}
 
-  getEvaluations(): Evaluations[] {
-    // Récupérer la liste des évaluations depuis le localStorage ou une API
-    const evaluationsData = localStorage.getItem('evaluations');
-    this.evaluations = evaluationsData ? JSON.parse(evaluationsData) : [];
+  getEvaluations() {
     return this.evaluations;
   }
 
-  programmerEvaluation(evaluation: Evaluations): void {
-    // Ajouter une nouvelle évaluation à la liste
+  addEvaluation(evaluation: any) {
     this.evaluations.push(evaluation);
-    // Mettre à jour le localStorage
+    this.saveToLocalStorage();
+  }
+
+  deleteEvaluation(index: number) {
+    if (this.evaluations[index].status !== 'done') {
+      this.evaluations.splice(index, 1);
+      this.saveToLocalStorage();
+    }
+  }
+
+  assignGrade(index: number, grade: number) {
+    if (this.evaluations[index].status === 'done') {
+      // You can handle grade assignment logic here
+      this.evaluations[index].grade = grade;
+      this.saveToLocalStorage();
+    }
+  }
+
+  private saveToLocalStorage() {
     localStorage.setItem('evaluations', JSON.stringify(this.evaluations));
   }
 
-  supprimerEvaluation(id: number): void {
-    // Supprimer une évaluation de la liste
-    this.evaluations = this.evaluations.filter(e => e.id !== id);
-    // Mettre à jour le localStorage
-    localStorage.setItem('evaluations', JSON.stringify(this.evaluations));
+  private loadFromLocalStorage() {
+    const storedEvaluations = localStorage.getItem('evaluations');
+    this.evaluations = storedEvaluations ? JSON.parse(storedEvaluations) : [];
   }
 }

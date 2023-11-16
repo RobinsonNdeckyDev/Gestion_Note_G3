@@ -7,6 +7,7 @@ import { AdminComponent } from './administrateur/admin/admin.component';
 import { ProfsComponent } from './professeurs/profs/profs.component';
 import { EtudiantsComponent } from './etudiants/etudiants.component';
 import { NotesComponent } from './professeurs/notes/notes.component';
+import { GestionEvaluationComponent } from './professeurs/gestion-evaluation/gestion-evaluation.component';
 
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'connexion', component: LoginComponent},
   { path: 'admin', component: AdminComponent},
   {path:'note', component: NotesComponent},
+  {path:'evaluation', component: GestionEvaluationComponent},
   { path: 'formateur', component: ProfsComponent},
   { path: 'etudiant', component: EtudiantsComponent},
 ];

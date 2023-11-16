@@ -1,47 +1,74 @@
-import { Evaluations } from './../../models/evaluation';
-import { FormateurService } from './../../formateur.service';
 import { Component, OnInit } from '@angular/core';
+import { GestionNotesService } from 'src/app/gestion-notes.service';
+import { Evaluations } from 'src/app/models/evaluation';
 
 @Component({
   selector: 'app-gestion-evaluation',
   templateUrl: './gestion-evaluation.component.html',
   styleUrls: ['./gestion-evaluation.component.css']
 })
-export class GestionEvaluationComponent {
+export class GestionEvaluationComponent implements OnInit {
+  i: number = 0;
+  semester: string = '';
+  date: Date = new Date();
+  year: Date = new Date();
+  type: string = '';
+  status: string = '';
+  subject: string = '';
   evaluations: Evaluations[] = [];
-  nouvelleEvaluation: Evaluations = {
-    id:0,
-    semestre: '',
-    date: new Date(),
-    type: '',
-    anneeScolaire: '',
-    etat: 'En cours',
-    matiere: ''
+  grade:any;
+  constructor(private evaluationService: GestionNotesService) {}
 
-  };
-  imageUrl:String="assets/logo.png";
-
-  constructor(private profService: FormateurService ) {}
-
-  ngOnInit(): void {
-    this.evaluations = this.profService.getEvaluations();
+  private saveToLocalStorage() {
+    localStorage.setItem('evaluations', JSON.stringify(this.evaluations));
   }
-  // showprogrammerEvaluation: boolean=true;
-  programmerEvaluation(): void {
 
-    this.profService.programmerEvaluation(this.nouvelleEvaluation);
-    this.nouvelleEvaluation = {
-      id: 0,
-      semestre: '1',
-      date: new Date(),
-      type: '',
-      anneeScolaire: '',
-      etat: 'En cours',
-      matiere: 'anglais'
+  ngOnInit() {
+    this.evaluationService.evaluations$.subscribe((evaluations) => {
+      this.evaluations = evaluations;
+    });
+  }
+
+  saveEvaluation() {
+    const evaluation: Evaluations = {
+      idEvaluation: 0,
+      semester: this.semester,
+      date: this.date,
+      type: this.type,
+      year: this.year,
+      status: this.status,
+      subject: this.subject,
+      Classe: [],
+      grade: null
     };
+
+    // this.evaluationService.saveEvaluation(evaluation).subscribe(() => {
+    //   this.evaluationService.getEvaluations().subscribe((evaluations) => {
+    //     this.evaluations = evaluations;
+    //   });
+    // });
   }
 
-  supprimerEvaluation(id: number): void {
-    this.profService.supprimerEvaluation(id);
+  deleteEvaluation(index: number) {
+    if (this.evaluations[index].status === 'faite') {
+      alert("Impossible de supprimer une évaluation déjà faite.");
+      return;
+    }
+
+    this.evaluations.splice(index, 1);
+    this.saveToLocalStorage();
+  }
+
+  assignGrade(index: number, gradeInput: string | null) {
+    if (gradeInput !== null) {
+      const grade = parseFloat(gradeInput.toString());
+      if (!isNaN(grade) && grade >= 0 && grade <= 20) {
+        this.evaluations[index].grade = grade;
+      } else {
+        alert("Veuillez entrer une note valide entre 0 et 20.");
+      }
+    } else {
+      alert("La note est nulle.");
+    }
   }
 }

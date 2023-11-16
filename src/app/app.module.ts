@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { FooterAdminComponent } from './header-footer/admin-h-f/footer-admin/footer-admin.component';
 import { UserHeaderComponent } from './header-footer/user-h-f/user-header/user-header.component';
 import { UserFooterComponent } from './header-footer/user-h-f/user-footer/user-footer.component';
+import { GestionNotesService } from './gestion-notes.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { UserFooterComponent } from './header-footer/user-h-f/user-footer/user-f
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [GestionNotesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

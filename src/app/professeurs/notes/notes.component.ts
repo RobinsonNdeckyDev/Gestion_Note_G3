@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { GestionNotesService } from 'src/app/gestion-notes.service';
 import {  Evaluations } from 'src/app/models/evaluation';
 import { Note } from 'src/app/models/note';
 
@@ -12,15 +11,18 @@ export class NotesComponent implements OnInit {
   evaluations: Evaluations[] = [];
   notes: Note[] = [];
 
-  constructor(private gestionNotesService: GestionNotesService) {}
-
+  constructor() {}
   ngOnInit(): void {
-    this.gestionNotesService.getEvaluations().subscribe((evaluations) => {
-      this.evaluations = evaluations;
-    });
-
-    this.gestionNotesService.getNotes().subscribe((notes) => {
-      this.notes = notes;
-    });
+    throw new Error('Method not implemented.');
   }
+
+  // ngOnInit(): void {
+  //   this.gestionNotesService.getEvaluations().subscribe((evaluations) => {
+  //     this.evaluations = evaluations;
+  //   });
+
+  //   this.gestionNotesService.getNotes().subscribe((notes) => {
+  //     this.notes = notes;
+  //   });
+  // }
 }
