@@ -24,6 +24,12 @@ export class FormateurService {
       this.saveToLocalStorage();
     }
   }
+  programmerEvaluation(evaluation: Evaluations): void {
+    // Ajouter une nouvelle évaluation à la liste
+    this.evaluations.push(evaluation);
+    // Mettre à jour le localStorage
+    localStorage.setItem('evaluations', JSON.stringify(this.evaluations));
+  }
 
   assignGrade(index: number, grade: number) {
     if (this.evaluations[index].status === 'done') {

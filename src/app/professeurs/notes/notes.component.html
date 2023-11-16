@@ -1,0 +1,29 @@
+<!-- notes.component.html -->
+<div>
+  <h2>Liste des évaluations</h2>
+  <ul>
+    <li *ngFor="let evaluation of evaluations">{{ evaluation.nom }}</li>
+  </ul>
+
+  <button (click)="saveEvaluation()">Ajouter une évaluation</button>
+</div>
+
+<div>
+  <h2>Ajouter une note</h2>
+  <label>Sélectionnez une évaluation: </label>
+  <select [(ngModel)]="selectedEvaluationId">
+    <option *ngFor="let evaluation of evaluations" [value]="evaluation.id">{{ evaluation.nom }}</option>
+  </select>
+
+  <label>Note: </label>
+  <input type="number" [(ngModel)]="noteValue" />
+
+  <button (click)="addNote()">Ajouter la note</button>
+</div>
+
+<div>
+  <h2>Liste des notes</h2>
+  <ul>
+    <li *ngFor="let note of notes">{{ note.value }} - {{ getEvaluationName(note.evaluationId) }}</li>
+  </ul>
+</div>

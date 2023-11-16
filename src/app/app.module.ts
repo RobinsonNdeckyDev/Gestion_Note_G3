@@ -16,6 +16,7 @@ import { FooterAdminComponent } from './header-footer/admin-h-f/footer-admin/foo
 import { UserHeaderComponent } from './header-footer/user-h-f/user-header/user-header.component';
 import { UserFooterComponent } from './header-footer/user-h-f/user-footer/user-footer.component';
 import { GestionNotesService } from './gestion-notes.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { GestionNotesService } from './gestion-notes.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgbModule,
   ],
   providers: [GestionNotesService],
   bootstrap: [AppComponent]

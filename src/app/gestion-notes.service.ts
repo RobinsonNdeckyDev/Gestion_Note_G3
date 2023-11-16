@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Evaluations } from './models/evaluation';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { Evaluations } from './models/evaluation';
 })
 export class GestionNotesService {
   private evaluationsSubject: BehaviorSubject<Evaluations[]> = new BehaviorSubject<Evaluations[]>([]);
-  evaluations$: Observable<Evaluations[]> = this.evaluationsSubject.asObservable();
+  evaluations$ = this.evaluationsSubject.asObservable();
 
   constructor() {
     this.loadFromLocalStorage();

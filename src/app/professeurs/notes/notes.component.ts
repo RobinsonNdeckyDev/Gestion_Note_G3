@@ -1,28 +1,36 @@
+// notes.component.ts
 import { Component, OnInit } from '@angular/core';
-import {  Evaluations } from 'src/app/models/evaluation';
-import { Note } from 'src/app/models/note';
+import { NotesService, Evaluation, Note } from './path-to-your-service-and-models';
 
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
-  styleUrls: ['./notes.component.css']
+  styleUrls: ['./notes.component.css'],
 })
 export class NotesComponent implements OnInit {
-  evaluations: Evaluations[] = [];
+  evaluations: Evaluation[] = [];
   notes: Note[] = [];
+  selectedEvaluationId: number | null = null;
+  noteValue: number | null = null;
 
-  constructor() {}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  constructor(private notesService: NotesService) {}
+
+  ngOnInit() {
+    this.evaluations = this.notesService.getEvaluations();
+    this.notes = this.notesService.getNotes();
   }
 
-  // ngOnInit(): void {
-  //   this.gestionNotesService.getEvaluations().subscribe((evaluations) => {
-  //     this.evaluations = evaluations;
-  //   });
+  saveEvaluation() {
+    const newEvaluation: Evaluation = { id: this.evaluations.length + 1, nom: `Evaluation ${this.evaluations.length + 1}` };
+    this.notesService.saveEvaluation(newEvaluation);
+    this.evaluations = this.notesService.getEvaluations();
+  }
 
-  //   this.gestionNotesService.getNotes().subscribe((notes) => {
-  //     this.notes = notes;
-  //   });
-  // }
+  addNote() {
+    if (this.selectedEvaluationId !== null && this.noteValue !== null) {
+      const newNote: Note = { evaluationId: this.selectedEvaluationId, value: this.noteValue };
+      this.notesService.addNote(newNote);
+      this.notes = this.notesService.getNotes();
+    }
+  }
 }

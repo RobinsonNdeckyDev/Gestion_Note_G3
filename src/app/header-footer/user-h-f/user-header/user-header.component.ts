@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class UserHeaderComponent {
 
   sidebarTitle: string = 'Utilisateur';
-
+  imageUrl:String="assets/logo.png";
 
   logClick(): void {
 

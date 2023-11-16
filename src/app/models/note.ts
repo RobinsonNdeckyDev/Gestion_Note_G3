@@ -1,6 +1,6 @@
-export class Note {
-  id ?:number;
-  evaluationId?:number;
-  apprenantId?:number;
-  valeur?:number;
+export interface Note {
+  evaluationId: number;
+  value: number;
 }
+
+
