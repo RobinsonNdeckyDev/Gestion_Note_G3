@@ -1,1 +1,121 @@
-<p>gestion-evaluation works!</p>
+
+<div class="container">
+  <div class="content">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Programmer Evaluation
+    </button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3 ">
+
+                <label for="semestre">Semestre:</label>
+                <input type="text" class="form-control" id="semestre" [(ngModel)]="nouvelleEvaluation.semestre" required>
+              </div>
+              <div class="mb-3">
+
+                <label for="date">Date:</label>
+                <input type="date" class="form-control" id="date" [(ngModel)]="nouvelleEvaluation.date" required>
+              </div>
+              <div class="mb-3">
+
+                <label for="type">Type:</label>
+                <select id="type" class="form-select" [(ngModel)]="nouvelleEvaluation.type" required>
+                  <option value="Devoir">Devoir</option>
+                  <option value="Examen">Examen</option>
+                </select>
+              </div>
+              <div class="mb-3">
+
+                <label for="anneeScolaire">Année Scolaire:</label>
+                <input type="text" class="form-control" id="anneeScolaire" [(ngModel)]="nouvelleEvaluation.anneeScolaire" required>
+              </div>
+              <div class="mb-3">
+
+                <label for="matiere">Matière:</label>
+                <input type="text" class="form-control" id="matiere" [(ngModel)]="nouvelleEvaluation.matiere" required>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary prime" (click)="programmerEvaluation()">Programmer Évaluation</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Liste des Évaluations Enregistrées</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Semestre</th>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Année Scolaire</th>
+          <th>État</th>
+          <th>Matière</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let evaluation of evaluations">
+          <td>{{ evaluation.semestre }}</td>
+          <td>{{ evaluation.date | date :'dd/MM/yyyy à hh:mm' :'UTC'}}</td>
+          <td>{{ evaluation.type }}</td>
+          <td>{{ evaluation.anneeScolaire }}</td>
+          <td>{{ evaluation.etat }}</td>
+          <td>{{ evaluation.matiere }}</td>
+          <td>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- <button (click)="supprimerEvaluation(evaluation.id)" [disabled]="evaluation.etat === 'Faite'">Supprimer</button> -->
+
+
+
+
+
+<!--
+(click)=" showCompnent()"
+(click)=" showCompnent()" -->
+
+
+
+<!-- <div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center">Programmer une Évaluation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card w-75">
+          <div class="card-body ">
+
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
