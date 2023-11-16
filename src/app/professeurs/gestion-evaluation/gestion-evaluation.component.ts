@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './gestion-evaluation.component.html',
   styleUrls: ['./gestion-evaluation.component.css']
 })
-export class GestionEvaluationComponent {
+export class GestionEvaluationComponent implements OnInit {
   evaluations: Evaluations[] = [];
   nouvelleEvaluation: Evaluations = {
     id:0,
@@ -15,8 +15,8 @@ export class GestionEvaluationComponent {
     date: new Date(),
     type: '',
     anneeScolaire: '',
-    etat: 'En cours',
-    matiere: ''
+    etat: '',
+    matiere: '',
 
   };
   imageUrl:String="assets/logo.png";
@@ -24,7 +24,10 @@ export class GestionEvaluationComponent {
   constructor(private profService: FormateurService ) {}
 
   ngOnInit(): void {
-    this.evaluations = this.profService.getEvaluations();
+    console.log("CC");
+    this.evaluations = JSON.parse(localStorage.getItem("evaluations") || "[]")
+    // this.evaluations = this.profService.getEvaluations();
+    console.log(this.evaluations);
   }
   // showprogrammerEvaluation: boolean=true;
   programmerEvaluation(): void {
@@ -32,12 +35,13 @@ export class GestionEvaluationComponent {
     this.profService.programmerEvaluation(this.nouvelleEvaluation);
     this.nouvelleEvaluation = {
       id: 0,
-      semestre: '1',
+      semestre: '',
       date: new Date(),
       type: '',
       anneeScolaire: '',
-      etat: 'En cours',
-      matiere: 'anglais'
+      etat: '',
+      matiere: '',
+  
     };
   }
 

@@ -4,7 +4,7 @@ export class Evaluations {
   date: Date = new Date();
   type: string = '';
   anneeScolaire: string = '';
-  etat: string = 'En cours';
+  etat: string = '';
   matiere: string = '';
 }
 

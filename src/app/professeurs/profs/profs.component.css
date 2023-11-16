@@ -6,13 +6,15 @@
   /* padding-left: 10%; */
 }
 .nav-link:focus-within{
-  background-color: #E4E29E;
-  color: black !important;
+  background-color: white;
+  color: #D9B !important;
 }
 .nav-link:hover{
-  background-color: #E4E29E;
-  color: black !important;
+  background-color: white;
+  color: #D9B !important;
+  text-align: center;
 }
+
 .nav-pills {
   display: flex;
   justify-content:space-evenly;
@@ -23,12 +25,13 @@
   padding-top: 20px;
 } */
 .btnev{
-  color: #E4E29E;
+  color: white;
   font-weight: bold;
+  background-color: #D9B;
 }
 .btnev:hover{
-  background-color: #E4E29E;
-  color: black;
+  background-color: white;
+  color: #D9B;
 }
 .sidebar a {
   padding: 10px;
@@ -38,10 +41,6 @@
   display: block;
 }
 
-.sidebar a:hover {
-  background-color: #ddd;
-  color: black;
-}
 
 .content {
   flex-grow: 1;
@@ -74,5 +73,5 @@ button {
 }
 
 footer{
-  margin-bottom: 60vh ;
+  margin-top: 60vh ;
 }

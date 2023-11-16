@@ -1,43 +1,45 @@
-<div class="navAdmin d-flex p-0 border bg-dark" style="border: none !important;">
+<main>
+    <div class="navAdmin d-flex p-0 border" style="border: none !important;background-color: #D9B;">
 
-  <img id="image" [src]="imageUrl" alt="">
-  <div class="list" style="width: 100% !important;">
-    <ul class="nav nav-pills mb-auto">
-      <li class="nav-item">
-        <a href="home" class="nav-link" style="color: #E4E29E ;">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-          Home
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-white" style="color: #E4E29E;">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-         Formateur
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-white" style="color: #E4E29E;">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-          Apprenant
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div class="buttons container-fluid  d-flex justify-content-end ">
-    <button class="btn btnev m-2"(click)="showEvaluation =true;showNote=false;">Evaluattion</button>
-  <button class="btn btnev m-2"(click)="showNote=true;showEvaluation=false;">Notes</button>
-  </div>
-</div>
+      <img id="image" [src]="imageUrl" alt="">
+      <div class="list" style="width: 100% !important;">
+        <ul class="nav nav-pills mt-1">
+          <li class="nav-item">
+            <a href="home" class="nav-link" style="color: white ;">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-white" style="color: white;">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+            Formateur
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-white" style="color: white;">
+              <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+              Apprenant
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="buttons container-fluid  d-flex justify-content-end ">
+        <button class="btn btnev m-2"(click)="showEvaluation =true;showNote=false;">Evaluation</button>
+      <button class="btn btnev m-2"(click)="showNote=true;showEvaluation=false;">Notes</button>
+      </div>
+    </div>
 
-<div *ngIf="showEvaluation">
-  <app-gestion-evaluation ></app-gestion-evaluation>
-</div>
+    <div *ngIf="showEvaluation">
+      <app-gestion-evaluation ></app-gestion-evaluation>
+    </div>
+    
+    <div *ngIf="showNote">
+      <app-notes ></app-notes>
+    </div>
+</main>
 
-<div *ngIf="showEvaluation">
-  <app-notes ></app-notes>
-</div>
-
-  <footer class="py-3 bg-dark" >
+<footer class="py-3" style="background-color: #D9B;">
     <!-- <ul class="nav justify-content-center border-bottom pb-3 mb-3">
       <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
@@ -45,7 +47,7 @@
       <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
     </ul> -->
-    <p class="text-center" style="color: #E4E29E;">&copy; 2023  Groupe 3</p>
-  </footer>
+    <p class="text-center" style="color: white;">&copy; 2023  Groupe 3</p>
+</footer>
 
 

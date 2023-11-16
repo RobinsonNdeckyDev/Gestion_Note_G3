@@ -9,7 +9,7 @@
     </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" >
           <div class="modal-header">
             <h5 class="text-center" id="exampleModalLabel">Modal title</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -19,17 +19,17 @@
               <div class="mb-3 ">
 
                 <label for="semestre" class="#" >Semestre:</label>
-                <input type="text" class="form-control" id="semestre" [(ngModel)]="nouvelleEvaluation.semestre" required>
+                <input type="text" name="semestre" class="form-control" id="semestre" [(ngModel)]="nouvelleEvaluation.semestre" required>
               </div>
               <div class="mb-3">
 
                 <label for="date">Date:</label>
-                <input type="date" class="form-control" id="date" [(ngModel)]="nouvelleEvaluation.date" required>
+                <input type="date" name="date" class="form-control" id="date" [(ngModel)]="nouvelleEvaluation.date" required>
               </div>
               <div class="mb-3">
 
                 <label for="type">Type:</label>
-                <select id="type" class="form-select" [(ngModel)]="nouvelleEvaluation.type" required>
+                <select id="type" name="type" class="form-select" [(ngModel)]="nouvelleEvaluation.type" required>
                   <option value="Devoir">Devoir</option>
                   <option value="Examen">Examen</option>
                 </select>
@@ -37,12 +37,12 @@
               <div class="mb-3">
 
                 <label for="anneeScolaire">Année Scolaire:</label>
-                <input type="text" class="form-control" id="anneeScolaire" [(ngModel)]="nouvelleEvaluation.anneeScolaire" required>
+                <input type="text" name="anneeScolaire" class="form-control" id="anneeScolaire" [(ngModel)]="nouvelleEvaluation.anneeScolaire" required>
               </div>
               <div class="mb-3">
 
                 <label for="matiere">Matière:</label>
-                <input type="text" class="form-control" id="matiere" [(ngModel)]="nouvelleEvaluation.matiere" required>
+                <input type="text" name="matiere" class="form-control" id="matiere" [(ngModel)]="nouvelleEvaluation.matiere" required>
               </div>
             </form>
           </div>
@@ -56,7 +56,7 @@
   </div>
 
   <div class="table">
-    <h2 class="text-center mb-4">Liste des Évaluations Enregistrées</h2>
+    <h2 class="text-center mb-4" style="color: #D9B; font-weight: bold;">Liste des Évaluations Enregistrées</h2>
     <table class="tableList">
       <thead>
         <tr id="listTr">
