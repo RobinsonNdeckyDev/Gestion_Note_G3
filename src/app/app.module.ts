@@ -16,6 +16,10 @@ import { UserHeaderComponent } from './header-footer/user-h-f/user-header/user-h
 import { UserFooterComponent } from './header-footer/user-h-f/user-footer/user-footer.component';
 import { HeaderAdminComponent } from './header-footer/admin-h-f/header-admin/header-admin.component';
 import { FooterAdminComponent } from './header-footer/admin-h-f/footer-admin/footer-admin.component';
+import { EvaluationListComponent } from './professeurs/notes/evaluation-list/evaluation-list.component';
+import { EvaluationComponent } from './evaluation/evaluation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -31,12 +35,16 @@ import { FooterAdminComponent } from './header-footer/admin-h-f/footer-admin/foo
     UserHeaderComponent,
     UserFooterComponent,
     HeaderAdminComponent,
-    FooterAdminComponent
+    FooterAdminComponent,
+    EvaluationListComponent,
+    EvaluationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

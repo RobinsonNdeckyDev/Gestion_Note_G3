@@ -1,1 +1,5 @@
-<p>profs works!</p>
+<label for="selectClasses">Sélectionnez les classes :</label>
+<select id="selectClasses" multiple>
+  <option *ngFor="let classe of classes" [value]="classe">{{ classe }}</option>
+</select>
+

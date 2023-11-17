@@ -1,5 +1,5 @@
 export class Matieres {
-  idMatierer: number = 0;
-  nomMatierer: string = '';
+  idMatiere: number = 0;
+  nomMatiere: string = '';
   Evaluations: any = [];
 }

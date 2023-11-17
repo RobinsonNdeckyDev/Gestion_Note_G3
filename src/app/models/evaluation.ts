@@ -1,9 +1,16 @@
 export class Evaluations {
   idEvaluation: number = 0;
-  semestre: string = '';
+  semester: string = '';
   date: Date = new Date();
   type: string = '';
-  annee_scolaire: Date = new Date();
-  etat: string = '';
-  Classe: any = [];
+  status: string = '';
+  subject: string = '';
+  Classe: any[] = [];
+  grade: number | null = null;
+
 }
+
+// export interface Evaluation {
+//   id: number;
+//   nom: string;
+// }
